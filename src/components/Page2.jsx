@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export default function Page2({ setCurrentPage, setDirection }) {
   const handleNext = () => {
     setDirection(1);
-    setCurrentPage(3);
+    setCurrentPage(2);
   };
 
   return (
@@ -16,30 +16,25 @@ export default function Page2({ setCurrentPage, setDirection }) {
         transition={{ delay: 0, duration: 0.2 }}
       >
 
-        <div className="w-full text-[16px] font-normal leading-[1.6] text-black tracking-tight break-keep">
+        <div className="w-full text-[19px] font-normal leading-[1.6] text-black tracking-tight break-keep">
           <div className="flex flex-col mt-0 divide-y divide-black/20">
             <div className="flex py-2">
-              <span className="font-bold w-12 shrink-0">일시:</span>
+              <span className="font-bold w-[52px] shrink-0 tracking-[0.03em]">일시</span>
               <span>2026년 4월 28일(화) 14:00</span>
             </div>
             
             <div className="flex py-2">
-              <span className="font-bold w-12 shrink-0">장소:</span>
+              <span className="font-bold w-[52px] shrink-0 tracking-[0.03em]">장소</span>
               <span>제주신화월드 랜딩관 볼룸 AB홀</span>
             </div>
  
             <div className="flex py-2">
-              <span className="font-bold w-12 shrink-0">주최:</span>
-              <span>FSAA제주국제학교</span>
+              <span className="font-bold w-[52px] shrink-0 tracking-[0.03em]">주최</span>
+              <span>FSAA 제주국제학교</span>
             </div>
           </div>
-
-          <p className="mt-7">
-            원활한 사전준비를 위하여<br/>
-            참석여부를 미리 알려주시면 감사하겠습니다.
-          </p>
  
-          <div className="mt-3 space-y-[13px]">
+          <div className="mt-5 space-y-[13px]">
             <div className="space-y-0.5">
               <div className="font-bold text-[16px] tracking-tight text-black">FULTON SCIENCE ACADEMY ATHERTON</div>
               <div className="text-[13px] text-gray-500 font-normal leading-[1.1] tracking-tight">

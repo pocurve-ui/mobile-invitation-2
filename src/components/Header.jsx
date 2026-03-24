@@ -25,9 +25,9 @@ export default function Header({ currentPage, changePage }) {
         onClick={handleLogoClick}
       >
         <img 
-          src="/assets/logo_text_only.svg" 
+          src="/assets/logo_simple.svg" 
           alt="처음으로" 
-          className="h-[42px] w-auto object-contain shrink-0 brightness-0"
+          className="h-[32px] w-auto object-contain shrink-0 brightness-0"
         />
       </div>
 

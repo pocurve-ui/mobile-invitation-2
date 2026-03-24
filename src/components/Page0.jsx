@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Countdown from './Countdown';
+
 import DiagonalPatternAnimation from './DiagonalPatternAnimation';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import Countdown from './Countdown';
 
 export default function Page0({ setDirection, setCurrentPage }) {
   const handleNext = () => {
@@ -23,7 +24,7 @@ export default function Page0({ setDirection, setCurrentPage }) {
         <img 
           src="/assets/0_arch.png" 
           alt="배경 아치 로고" 
-          className="w-[91%] max-w-[532px] object-contain opacity-90 mt-[60px]"
+          className="w-[91%] max-w-[532px] object-contain opacity-90 mt-[60px] -translate-y-[3%]"
         />
         {/* 2. 패턴 파도 애니메이션 (아치와 같은 컨텍스트 내에서 블렌딩) */}
         <div className="absolute inset-0 pointer-events-none">
@@ -31,48 +32,47 @@ export default function Page0({ setDirection, setCurrentPage }) {
         </div>
       </motion.div>
 
-      {/* 3. 상단 콘텐츠: 중앙 정렬된 로고와 좌측 정렬된 타이틀 */}
+      {/* 3. 상단 콘텐츠: 로고와 타이틀 */}
       <div className="z-20 w-full flex flex-col items-center pointer-events-none mt-2 gap-8">
         <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
           className="flex justify-center w-full"
         >
           <img 
-            src="/assets/0_logo.svg" 
-            alt="FSAA 방패 로고" 
-            className="w-[29%] md:w-[124px] h-auto object-contain mix-blend-multiply" 
+            src="/assets/mainpage_logo.svg" 
+            alt="FSAA 메인 로고" 
+            className="h-[88px] w-auto object-contain brightness-0 mix-blend-multiply" 
           />
         </motion.div>
 
         <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 1.2 }}
-          className="w-full flex justify-center"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4, duration: 1.2, ease: "easeOut" }}
+          className="w-full flex justify-center px-6"
         >
-          <img 
-            src="/0_assets2/0_title3.svg" 
-            alt="STEP INTO THE NEXT FRONTIER" 
-            className="w-[81%] h-auto object-contain mix-blend-multiply" 
-          />
+          <h1 className="text-[2.6rem] font-extrabold text-center leading-[1.05] tracking-[-0.03em] text-black mix-blend-multiply uppercase">
+            FSAA<br />
+            GROUNDBREAKING<br />
+            CEREMONY
+          </h1>
         </motion.div>
       </div>
 
+
       <div className="flex-1" />
 
-
-
-      {/* 3. 하단 콘텐츠 (텍스트, 카운트다운 - 화살표 위에 배치) */}
+      {/* 3. 하단 콘텐츠: 텍스트 및 일시 */}
       <motion.div 
-        className="z-20 flex flex-col items-center w-full pointer-events-none mb-2"
+        className="z-20 flex flex-col items-center w-full pointer-events-none pb-[1vh]"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.0, duration: 0.6 }}
       >
-        <p className="text-black text-[16px] font-sans tracking-tight font-medium mix-blend-multiply mb-0 relative z-10">
-          FSAA 제주 캠퍼스 기공식
+        <p className="text-black text-[16px] font-sans tracking-tight font-medium mb-0 relative z-10 drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]">
+          FSAA 제주국제학교 기공식
         </p>
         <Countdown targetDate="2026-04-28T14:00:00+09:00" />
       </motion.div>

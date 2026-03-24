@@ -13,15 +13,15 @@ const SEQUENCE = [0, 3, 1, 2];
 
 export default function DiagonalPatternAnimation() {
   const colors = ['#00f191', '#ff4400', '#0043ff', '#ff00a2'];
-  const [colorIndex, setColorIndex] = useState(0);
+  const [colorIndex, setColorIndex] = useState(() => Math.floor(Math.random() * colors.length));
   const [key, setKey] = useState(0);
 
   useEffect(() => {
-    // 14.5s cycle: 12s animation + 3.6s max staggered delay ensures 1.5s solid hold of all 4 stripes before wipe out
+    // 6.6s cycle: 2.5s to appear + 2.0s maintain + 1.5s fade out + 0.6s gap
     const interval = setInterval(() => {
       setColorIndex(prev => (prev + 1) % colors.length);
       setKey(prev => prev + 1);
-    }, 11700); 
+    }, 6600); 
     return () => clearInterval(interval);
   }, []);
 
@@ -30,21 +30,23 @@ export default function DiagonalPatternAnimation() {
       <style>{`
         @keyframes softWipeStay {
           0% {
-            -webkit-mask-position: -15000vw -15000vw;
-            mask-position: -15000vw -15000vw;
+            -webkit-mask-position: 100% 100%;
+            mask-position: 100% 100%;
           }
           100% {
-            -webkit-mask-position: 1500vw 1500vw;
-            mask-position: 1500vw 1500vw;
+            -webkit-mask-position: 0% 0%;
+            mask-position: 0% 0%;
           }
         }
+        @keyframes fadeOutTogether {
+          0%, 68% { opacity: 1; }
+          91%, 100% { opacity: 0; }
+        }
         .soft-gradient-wipe {
-          /* 15000vw mask with sharp 5% transition bands (20%-25% and 75%-80%) creates a distinct 0.4s wipe effect 
-             instead of a global slow fade, fixing the "all fading at once" issue. */
-          -webkit-mask-image: linear-gradient(-45deg, transparent 0%, transparent 20%, black 25%, black 75%, transparent 80%, transparent 100%);
-          mask-image: linear-gradient(-45deg, transparent 0%, transparent 20%, black 25%, black 75%, transparent 80%, transparent 100%);
-          -webkit-mask-size: 15000vw 15000vw;
-          mask-size: 15000vw 15000vw;
+          -webkit-mask-image: linear-gradient(to right bottom, black 0%, black 40%, transparent 60%, transparent 100%);
+          mask-image: linear-gradient(to right bottom, black 0%, black 40%, transparent 60%, transparent 100%);
+          -webkit-mask-size: 300% 300%;
+          mask-size: 300% 300%;
           -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
         }
@@ -53,12 +55,16 @@ export default function DiagonalPatternAnimation() {
       {/* Container scaled to fit properly and match reference 0_ptn ele2.svg size & position */}
       {/* Reduced to 90% of 2.43x = 2.19x limit for visual refinement. */}
       <div 
+        key={key}
         className="relative w-[1500%] aspect-[2527/2808]"
-        style={{ transform: 'scale(2.19)', marginTop: 'calc(-80% + 240px)', marginLeft: '30px' }}
+        style={{ 
+          transform: 'scale(2.19)', marginTop: 'calc(-80% + 240px)', marginLeft: '30px',
+          animation: 'fadeOutTogether 6.6s ease-in-out'
+        }}
       >
         {POLYGONS.map((points, index) => {
           const order = SEQUENCE.indexOf(index);
-          const delay = order * 1.2 - 1.3; // 0.7s wait before appearing
+          const delay = order * 0.5 + 0.2; // slight wait before the first one appears
           
           return (
             <svg
@@ -66,7 +72,7 @@ export default function DiagonalPatternAnimation() {
               viewBox="0 0 2527.18 2808.53"
               className="absolute inset-0 w-full h-full soft-gradient-wipe mix-blend-multiply"
               style={{
-                animation: `softWipeStay 12.0s linear ${delay}s both`
+                animation: `softWipeStay 0.8s ease-out ${delay}s both`
               }}
             >
               <polygon fill={colors[colorIndex]} points={points} />

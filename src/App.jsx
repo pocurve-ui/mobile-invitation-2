@@ -8,7 +8,7 @@ import Page3 from './components/Page3';
 import Page4 from './components/Page4';
 import Page5 from './components/Page5';
 
-const pages = [Page0, Page1, Page2, Page3, Page4, Page5];
+const pages = [Page0, Page2, Page1, Page3, Page4, Page5];
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
