@@ -20,8 +20,8 @@ export default function Page1({ setCurrentPage, setDirection }) {
         
         <div className="space-y-[18px] text-[16px] font-normal leading-[1.6] text-gray-800 tracking-tight break-keep text-center">
           <p>
-            제주에서 아시아 최고의 STEAM 교육 플랫폼을<br/>
-            제공할 <strong className="font-bold text-black">풀턴 사이언스 아카데미 애서튼(FSAA)</strong>이<br/>
+            제주에서 아시아 최고의 STEAM 교육 플랫폼을 제공할<br/>
+            <strong className="font-bold text-black">풀턴 사이언스 아카데미 애서튼(FSAA)</strong>이<br/>
             새로운 출발을 알리는 기공식을 개최합니다.
           </p>
           <p>
