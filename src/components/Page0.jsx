@@ -26,11 +26,12 @@ export default function Page0({ setDirection, setCurrentPage }) {
           alt="배경 아치 로고" 
           className="w-[91%] max-w-[532px] object-contain opacity-90 mt-[60px] -translate-y-[3%]"
         />
-        {/* 2. 패턴 파도 애니메이션 (아치와 같은 컨텍스트 내에서 블렌딩) */}
-        <div className="absolute inset-0 pointer-events-none">
-          <DiagonalPatternAnimation />
-        </div>
       </motion.div>
+
+      {/* 2. 패턴 파도 애니메이션 (z-30으로 올리고 multiply 적용하여 다시 블렌딩 활성화) */}
+      <div className="absolute inset-0 pointer-events-none z-30 mix-blend-multiply">
+        <DiagonalPatternAnimation />
+      </div>
 
       {/* 3. 상단 콘텐츠: 로고와 타이틀 */}
       <div className="z-20 w-full flex flex-col items-center pointer-events-none mt-2 gap-8">
