@@ -38,12 +38,12 @@ export default function Page0({ setDirection, setCurrentPage }) {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
-        className="absolute top-12 left-0 w-full flex justify-center z-20 pointer-events-none"
+        className="absolute top-8 left-0 w-full flex justify-center z-20 pointer-events-none"
       >
         <img 
           src="/assets/mainpage_logo.svg" 
           alt="FSAA 메인 로고" 
-          className="h-[106px] w-auto object-contain brightness-0 mix-blend-multiply" 
+          className="h-[90px] w-auto object-contain brightness-0 mix-blend-multiply" 
         />
       </motion.div>
 
@@ -72,10 +72,12 @@ export default function Page0({ setDirection, setCurrentPage }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.0, duration: 0.6 }}
       >
-        <p className="text-black text-[16px] font-sans tracking-tight font-medium mb-0 relative z-10 drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]">
+        <p className="text-black text-[16px] font-sans tracking-tight font-medium mb-0 leading-none relative z-10 drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]">
           FSAA 제주국제학교 기공식
         </p>
-        <Countdown targetDate="2026-04-28T14:00:00+09:00" />
+        <div className="mt-1">
+          <Countdown targetDate="2026-04-28T14:00:00+09:00" />
+        </div>
       </motion.div>
 
 
