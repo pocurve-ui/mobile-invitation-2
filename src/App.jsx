@@ -137,7 +137,7 @@ function App() {
       </AnimatePresence>
 
       <motion.div 
-        className="absolute bottom-14 left-0 w-full z-50 flex flex-col items-center cursor-pointer opacity-80 hover:opacity-100 transition-opacity text-black"
+        className="absolute bottom-10 left-0 w-full z-50 flex flex-col items-center cursor-pointer opacity-80 hover:opacity-100 transition-opacity text-black"
         onClick={() => changePage(1)}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

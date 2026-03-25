@@ -63,7 +63,7 @@ const FlipCard = ({ digit, label }) => {
       </div>
       
       {/* Label (Days, Hours, Minutes, Seconds) */}
-      <span className="text-[13px] sm:text-[13px] text-black font-light font-sans tracking-wide mt-[-5px]">
+      <span className="text-[13px] sm:text-[13px] text-black font-light font-sans tracking-wide mt-[-8px]">
         {label}
       </span>
       

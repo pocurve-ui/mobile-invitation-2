@@ -12,7 +12,7 @@ export default function Page0({ setDirection, setCurrentPage }) {
   };
 
   return (
-    <div className="w-full h-full relative flex flex-col items-center pt-8 pb-24 px-6 bg-white overflow-hidden">
+    <div className="w-full h-full relative flex flex-col items-center pt-8 pb-20 px-6 bg-white overflow-hidden">
       
       {/* 1. 배경 아치 로고 (가장 밑바탕 z-0) */}
       <motion.div 
@@ -24,7 +24,7 @@ export default function Page0({ setDirection, setCurrentPage }) {
         <img 
           src="/assets/0_arch.png" 
           alt="배경 아치 로고" 
-          className="w-[91%] max-w-[532px] object-contain opacity-90 -translate-y-[5%]"
+          className="w-[91%] max-w-[532px] object-contain opacity-90 -translate-y-[5%] mt-[-10px]"
         />
       </motion.div>
 
@@ -47,14 +47,14 @@ export default function Page0({ setDirection, setCurrentPage }) {
         />
       </motion.div>
 
-      <div className="absolute top-[45%] -translate-y-1/2 z-20 w-full flex flex-col items-center pointer-events-none px-6">
+      <div className="absolute top-[45%] -translate-y-1/2 mt-[20px] z-20 w-full flex flex-col items-center pointer-events-none px-6">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 1.2, ease: "easeOut" }}
           className="w-full flex justify-center"
         >
-          <h1 className="text-[2.2rem] sm:text-[2.6rem] font-extrabold text-center leading-[1.05] tracking-[-0.03em] text-black uppercase drop-shadow-[0_2px_15px_rgba(255,255,255,0.8)]">
+          <h1 className="text-[2.2rem] sm:text-[2.6rem] font-extrabold text-center leading-[1.05] tracking-[-0.01em] text-black uppercase drop-shadow-[0_2px_15px_rgba(255,255,255,0.8)]">
             FSAA<br />
             GROUNDBREAKING<br />
             CEREMONY

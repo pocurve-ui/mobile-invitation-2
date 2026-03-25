@@ -58,7 +58,7 @@ export default function DiagonalPatternAnimation() {
         key={key}
         className="relative w-[1500%] aspect-[2527/2808]"
         style={{ 
-          transform: 'scale(2.19)', marginTop: 'calc(-80% + 240px)', marginLeft: '30px',
+          transform: 'scale(2.19)', marginTop: 'calc(-80% + 310px)', marginLeft: '40px',
           animation: 'fadeOutTogether 6.6s ease-in-out'
         }}
       >
