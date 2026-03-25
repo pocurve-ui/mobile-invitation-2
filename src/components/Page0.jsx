@@ -12,7 +12,7 @@ export default function Page0({ setDirection, setCurrentPage }) {
   };
 
   return (
-    <div className="w-full h-full relative flex flex-col items-center pt-8 pb-24 px-6 bg-white">
+    <div className="w-full h-full relative flex flex-col items-center pt-8 pb-24 px-6 bg-white overflow-hidden">
       
       {/* 1. 배경 아치 로고 (가장 밑바탕 z-0) */}
       <motion.div 
@@ -24,37 +24,37 @@ export default function Page0({ setDirection, setCurrentPage }) {
         <img 
           src="/assets/0_arch.png" 
           alt="배경 아치 로고" 
-          className="w-[91%] max-w-[532px] object-contain opacity-90 mt-[60px] -translate-y-[3%]"
+          className="w-[91%] max-w-[532px] object-contain opacity-90 -translate-y-[5%]"
         />
       </motion.div>
 
       {/* 2. 패턴 파도 애니메이션 (z-30으로 올리고 multiply 적용하여 다시 블렌딩 활성화) */}
-      <div className="absolute inset-0 pointer-events-none z-30 mix-blend-multiply">
+      <div className="absolute inset-0 pointer-events-none z-30 mix-blend-multiply overflow-hidden">
         <DiagonalPatternAnimation />
       </div>
 
-      {/* 3. 상단 콘텐츠: 로고와 타이틀 */}
-      <div className="z-20 w-full flex flex-col items-center pointer-events-none mt-2 gap-8">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="flex justify-center w-full"
-        >
-          <img 
-            src="/assets/mainpage_logo.svg" 
-            alt="FSAA 메인 로고" 
-            className="h-[88px] w-auto object-contain brightness-0 mix-blend-multiply" 
-          />
-        </motion.div>
+      {/* 3. 상단 콘텐츠: 로고(상단 고정 및 20% 확대) 와 타이틀(중앙 유지) */}
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.8 }}
+        className="absolute top-12 left-0 w-full flex justify-center z-20 pointer-events-none"
+      >
+        <img 
+          src="/assets/mainpage_logo.svg" 
+          alt="FSAA 메인 로고" 
+          className="h-[106px] w-auto object-contain brightness-0 mix-blend-multiply" 
+        />
+      </motion.div>
 
+      <div className="absolute top-[45%] -translate-y-1/2 z-20 w-full flex flex-col items-center pointer-events-none px-6">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 1.2, ease: "easeOut" }}
-          className="w-full flex justify-center px-6"
+          className="w-full flex justify-center"
         >
-          <h1 className="text-[2.6rem] font-extrabold text-center leading-[1.05] tracking-[-0.03em] text-black mix-blend-multiply uppercase">
+          <h1 className="text-[2.2rem] sm:text-[2.6rem] font-extrabold text-center leading-[1.05] tracking-[-0.03em] text-black uppercase drop-shadow-[0_2px_15px_rgba(255,255,255,0.8)]">
             FSAA<br />
             GROUNDBREAKING<br />
             CEREMONY
