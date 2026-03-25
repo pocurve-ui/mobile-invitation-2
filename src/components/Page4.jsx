@@ -19,11 +19,11 @@ export default function Page4() {
         </div>
 
         {/* 지도 이미지 */}
-        <div className="w-full aspect-video bg-white overflow-hidden mb-4 border-[0.5px] border-[#BFBFBF]">
+        <div className="w-full aspect-[16/10] bg-white overflow-hidden mb-4 border-[0.5px] border-[#BFBFBF]">
           <img 
-            src="/assets/map_illust2-wh.png" 
+            src="/assets/map_illust4-wh.png" 
             alt="지도 안내" 
-            className="w-full h-full object-cover translate-y-[-12px] scale-[1.05]"
+            className="w-full h-full object-cover translate-y-[-10px] scale-[1.1] translate-x-[-1px]"
           />
         </div>
 
