@@ -8,7 +8,7 @@ export default function Page1({ setCurrentPage, setDirection }) {
   };
 
   return (
-    <div className="w-full h-full relative flex flex-col pt-[210px] pb-24 px-6 overflow-hidden">
+    <div className="w-full h-full relative flex flex-col pt-[200px] pb-24 px-6 overflow-hidden">
       {/* 중앙 정렬된 콘텐츠 */}
       <motion.div 
         className="z-10 flex-1 flex flex-col items-center max-w-lg mx-auto"

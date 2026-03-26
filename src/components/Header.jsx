@@ -18,10 +18,10 @@ export default function Header({ currentPage, changePage }) {
   };
 
   return (
-    <header className="absolute top-0 left-0 right-0 w-full max-w-[480px] mx-auto pt-6 pb-8 px-6 flex flex-col items-start space-y-[10px] z-50 pointer-events-auto">
+    <header className="absolute top-0 left-0 right-0 w-full max-w-[480px] mx-auto pt-[14px] pb-8 px-6 flex flex-col items-start space-y-[10px] z-50 pointer-events-auto">
       {/* 귀환 로고 (간소화) / flex shrink 방지 및 60% 크기 축소 */}
       <div 
-        className="cursor-pointer transition-opacity active:opacity-50 shrink-0"
+        className="cursor-pointer transition-opacity active:opacity-50 shrink-0 translate-y-[5px]"
         onClick={handleLogoClick}
       >
         <img 

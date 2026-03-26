@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function Page4() {
   return (
-    <div className="w-full h-full relative flex flex-col pt-[200px] pb-24 px-6 overflow-hidden">
+    <div className="w-full h-full relative flex flex-col pt-[190px] pb-24 px-6 overflow-hidden">
       <motion.div 
         className="z-10 flex-1 flex flex-col max-w-lg w-full"
         initial={{ opacity: 0, y: 5 }}

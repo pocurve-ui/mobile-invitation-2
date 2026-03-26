@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function Page5() {
   return (
-    <div className="w-full h-full relative flex flex-col pt-[220px] pb-24 px-6 overflow-hidden">
+    <div className="w-full h-full relative flex flex-col pt-[210px] pb-24 px-6 overflow-hidden">
       <motion.div 
         className="z-10 flex-1 flex flex-col max-w-lg w-full"
         initial={{ opacity: 0, y: 5 }}
@@ -20,7 +20,7 @@ export default function Page5() {
         </div>
 
         {/* 구분선 */}
-        <div className="w-full h-[1px] bg-black/20 mb-10"></div>
+        <div className="w-full h-[1px] bg-black/20 mb-[32px]"></div>
 
         {/* 연락처 정보 */}
         <div className="space-y-3 text-[13px] text-gray-500 font-normal leading-[1.1] tracking-tight">
