@@ -6,7 +6,7 @@ export default function Page3({ setCurrentPage, setDirection }) {
     { time: '14:00 - 14:10', title: '국민의례 및 참석 내외빈 소개' },
     { time: '14:10 - 14:14', title: '이사장 인사말' },
     { time: '14:14 - 14:18', title: '비전영상상영' },
-    { time: '14:18 - 14:33', title: 'FSAA의 비전과 미래 (프레젠테이션)' },
+    { time: '14:18 - 14:33', title: 'FSAA의 비전과 미래(프레젠테이션)' },
     { time: '14:33 - 14:38', title: 'FSA 총교장 환영사' },
     { time: '14:38 - 15:15', title: '축사' },
     { time: '15:15 - 15:18', title: '시설영상상영' },
