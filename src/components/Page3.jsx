@@ -4,14 +4,15 @@ import { motion } from 'framer-motion';
 export default function Page3({ setCurrentPage, setDirection }) {
   const schedule = [
     { time: '14:00 - 14:10', title: '국민의례 및 참석 내외빈 소개' },
-    { time: '14:10 - 14:15', title: '이사장 인사말' },
-    { time: '14:15 - 14:20', title: '영상상영' },
-    { time: '14:20 - 14:35', title: 'FSAA의 비전과 미래 (PPT)' },
-    { time: '14:35 - 14:40', title: '총교장 환영사' },
-    { time: '14:40 - 15:15', title: '축사' },
-    { time: '15:15 - 15:20', title: '발파 세레모니' },
-    { time: '15:20 - 15:25', title: '기념 촬영' },
-    { time: '15:25 - 15:30', title: '폐식 및 안내' },
+    { time: '14:10 - 14:14', title: '이사장 인사말' },
+    { time: '14:14 - 14:18', title: '비전영상상영' },
+    { time: '14:18 - 14:33', title: 'FSAA의 비전과 미래 (PPT)' },
+    { time: '14:33 - 14:38', title: 'FSA총교장 환영사' },
+    { time: '14:38 - 15:15', title: '축사' },
+    { time: '15:15 - 15:18', title: '시설영상상영' },
+    { time: '15:18 - 15:23', title: '발파 세레모니' },
+    { time: '15:23 - 15:28', title: '기념 촬영' },
+    { time: '15:28 - 15:30', title: '폐식 및 안내' },
     { time: '15:30 - ', title: 'SITE TOUR' },
   ];
 
@@ -22,7 +23,7 @@ export default function Page3({ setCurrentPage, setDirection }) {
   };
 
   return (
-    <div className="w-full h-full relative flex flex-col pt-[200px] pb-24 px-6 overflow-hidden">
+    <div className="w-full h-full relative flex flex-col pt-[195px] pb-24 px-6 overflow-hidden">
       <motion.div 
         className="z-10 flex-1 flex flex-col max-w-lg w-full max-h-full"
         initial={{ opacity: 0, y: 5 }}
