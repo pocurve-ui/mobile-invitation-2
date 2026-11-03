@@ -10,19 +10,14 @@ const ColonSeparator = () => (
 export default function Countdown({ targetDate }) {
   const calculateTimeLeft = () => {
     const difference = +new Date(targetDate) - +new Date();
-    let timeLeft = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60)
-      };
-    } else {
-      timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
-    return timeLeft;
+    const duration = Math.abs(difference);
+    return {
+      elapsed: difference <= 0,
+      days: Math.floor(duration / 86400000),
+      hours: Math.floor(duration / 3600000) % 24,
+      minutes: Math.floor(duration / 60000) % 60,
+      seconds: Math.floor(duration / 1000) % 60
+    };
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -34,11 +29,9 @@ export default function Countdown({ targetDate }) {
     return () => clearInterval(timer);
   }, [targetDate]);
 
-  const pad = (num) => String(num).padStart(2, '0');
-
   return (
     <div className="flex justify-center items-start gap-0 mt-0 mb-0 relative z-20 w-full max-w-sm mx-auto">
-      <FlipCard digit={timeLeft.days} label="days" />
+      <FlipCard digit={timeLeft.days} label="days" prefix={timeLeft.elapsed ? '+' : ''} />
       <ColonSeparator />
       <FlipCard digit={timeLeft.hours} label="hrs." />
       <ColonSeparator />

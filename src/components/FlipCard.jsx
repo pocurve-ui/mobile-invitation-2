@@ -51,15 +51,16 @@ const SingleDigit = ({ digit }) => {
   );
 };
 
-const FlipCard = ({ digit, label }) => {
-  const tens = Math.floor(digit / 10);
-  const ones = digit % 10;
+const FlipCard = ({ digit, label, prefix = '' }) => {
+  const digits = String(digit).padStart(2, '0').split('');
 
   return (
     <div className="flex flex-col items-center">
       <div className="flex gap-0">
-        <SingleDigit digit={tens} />
-        <SingleDigit digit={ones} />
+        {prefix && <span className="h-[44px] sm:h-[48px] flex items-center text-black text-[1.74rem] sm:text-[1.87rem] font-bold">{prefix}</span>}
+        {digits.map((value, index) => (
+          <SingleDigit key={digits.length - index} digit={Number(value)} />
+        ))}
       </div>
       
       {/* Label (Days, Hours, Minutes, Seconds) */}
