@@ -10,7 +10,7 @@ export default function Header({ currentPage, changePage }) {
   const menus = [
     { name: '모시는 글', targetPage: 1, activeColor: 'text-[#0043ff]' },
     { name: '식순', targetPage: 3, activeColor: 'text-[#ff00a2]' },
-    { name: '오시는 길', targetPage: 4, activeColor: 'text-[#00f191]' }
+    { name: '오시는 길', targetPage: 4, activeColor: 'text-[#00F251]' }
   ];
 
   const handleLogoClick = () => {

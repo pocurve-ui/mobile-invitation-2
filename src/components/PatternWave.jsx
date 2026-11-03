@@ -41,7 +41,7 @@ const shapes = [
   { id: 37, type: 'polygon', points: "430.77 738.46 369.23 738.46 307.69 738.46 246.15 738.46 246.15 800 307.69 800 369.23 800 430.77 800 492.31 800 553.85 800 553.85 738.46 492.31 738.46 430.77 738.46" },
 ];
 
-const waveColors = ["#0043ff", "#ff00a2", "#ff4400", "#00f191"];
+const waveColors = ["#0043ff", "#ff00a2", "#ff4400", "#00F251"];
 
 export default function PatternWave() {
   const [waveIndex, setWaveIndex] = useState(0);

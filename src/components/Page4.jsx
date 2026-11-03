@@ -41,7 +41,7 @@ export default function Page4() {
             href="https://naver.me/GTn3bYuT"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 border border-black/20 bg-transparent py-3 px-4 text-[14px] text-black font-semibold transition-all duration-300 hover:border-[#00f191] hover:text-[#00f191] active:bg-[#00f191]/10"
+            className="flex-1 flex items-center justify-center gap-2 border border-black/20 bg-transparent py-3 px-4 text-[14px] text-black font-semibold transition-all duration-300 hover:border-[#00F251] hover:text-[#00F251] active:bg-[#00F251]/10"
           >
             네이버 지도
           </a>

@@ -12,7 +12,7 @@ const POLYGONS = [
 const SEQUENCE = [0, 3, 1, 2];
 
 export default function DiagonalPatternAnimation() {
-  const colors = ['#00f191', '#ff4400', '#0043ff', '#ff00a2'];
+  const colors = ['#00F251', '#ff4400', '#0043ff', '#ff00a2'];
   const [colorIndex, setColorIndex] = useState(() => Math.floor(Math.random() * colors.length));
   const [key, setKey] = useState(0);
 
